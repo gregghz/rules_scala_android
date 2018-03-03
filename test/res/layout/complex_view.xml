@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+            android:id="@+id/wrap"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"/>
+
+    <RelativeLayout
+            android:id="@+id/relativeWrap"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <RelativeLayout
+                android:id="@+id/border"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentTop="true"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/border">
+
+            <EditText
+                    android:layout_weight="1"
+                    android:id="@+id/editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:minLines="1"
+                    android:lines="3"
+                    android:imeOptions="flagNoExtractUi"/>
+            <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                <ImageButton
+                        android:id="@+id/doneButton"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="13dp"
+                        android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/bar"
+            android:splitMotionEvents="false" >
+
+            <ImageButton
+                android:id="@+id/button1"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button2" />
+
+            <ImageButton
+                android:id="@+id/button2"
+                app:layout_constraintStart_toEndOf="@+id/button1"
+                app:layout_constraintEnd_toStartOf="@+id/button3" />
+
+            <ImageButton
+                android:id="@+id/button3"
+                app:layout_constraintStart_toEndOf="@+id/stylesButton"
+                app:layout_constraintEnd_toStartOf="@+id/otherButton" />
+            <TextView
+                android:id="@+id/textView"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:gravity="center"/>
+            <ImageButton
+                android:id="@+id/otherButton"
+                app:layout_constraintStart_toEndOf="@+id/button3"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:elevation="16dp">
+
+            <ImageButton
+                android:id="@+id/exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingEnd="20dp"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</merge>
